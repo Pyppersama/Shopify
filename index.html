@@ -10,65 +10,117 @@
 
     <nav>
         <div class="image">
-            <img src="" alt="Shopify Logo">
+            <a href="shopify.com">
+                <img 
+                    src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg" 
+                    alt="Shopify Logo"
+                    class="iconLogo"
+                >
+            </a>
         </div>
         <div class="search">
-            <img src="" alt="searchbar icon">
-            <input type="text">
+           <img src="https://crushingit.tech/hackathon-assets/icon-search.svg" alt="searchbar icon" class="black-svg">
+            <input type="text" placeholder="Search">
         </div>
         <div class="user">
             <div class="user-alarm">
-
+                <button aria-label="Notifications" onclick="hideAlert()">
+                    <img
+                        src="https://crushingit.tech/hackathon-assets/icon-bell.svg"
+                        alt="alarm icon"
+                        class="black-svg"
+                    >
+                </button>
             </div>
-            <div class="user-name">
+            <div class="user-name" id="userName" onclick="hideMenu()">
                 <h4>Davii Collections</h4>
-                <button>DC</button>
+                <button aria-label="User Options" >DC</button>
             </div>
         </div>
-        <div class="hidden-menu">
+        <div class="hidden-menu" id="hiddenMenu" aria-hidden="true" >
             <ul>
-                <li><a href="#"><button></button>Davii Collections</a></li>
-                <li><a href="#"><img src="" alt="store icon"> All Stores </a></li>
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">ChangeLog</a></li>
-                <li><a href="#">Communit Forums</a></li>
-                <li><a href="#">Hire a Shopify Partner</a></li>
-                <li><a href="#">Keyboard Shortcuts</a></li>
-                <li><a href="#">David micheal <br> <span>davidmicheal@gmail.com</span></a></li>
-                <li><a href="#">Manage Account</a></li>
-                <li><a href="#">Log Out</a></li>
+                <li><a href="admin.shopify.com"><button aria-label="User Options" >DC</button>Davii Collections</a></li>
+                <li class="hidden-line"><a href="admin.shopify.com"><img src="https://crushingit.tech/hackathon-assets/icon-store.svg" alt="store icon"> All Stores </a></li>
+                <li><a href="admin.shopify.com">Help Center</a></li>
+                <li><a href="admin.shopify.com">ChangeLog</a></li>
+                <li><a href="admin.shopify.com">Communit Forums</a></li>
+                <li><a href="admin.shopify.com">Hire a Shopify Partner</a></li>
+                <li class="hidden-line" ><a href="admin.shopify.com">Keyboard Shortcuts</a></li>
+                <li><a href="admin.shopify.com">David Micheal <br> <span>davidmicheal@gmail.com</span></a></li>
+                <li><a href="admin.shopify.com">Manage Account</a></li>
+                <li><a href="admin.shopify.com">Log Out</a></li>
             </ul>
         </div>
     </nav>
 
 
     <main>
-        <div class="trial">
-            <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae saepe quod qui.</h4>
-            <div class="trial-btn">
-                <button>Select a plan</button>
-                <img src="" alt="close button">
+        <div class="alert" id="alertDiv">
+            <div class="alert-head">
+                <h4>Alerts</h4>
+                <div class="alert-head-icons">
+                    <img src="https://crushingit.tech/hackathon-assets/icon-filter.svg" alt="filter icon" class="white-svg">
+                    <img src="https://crushingit.tech/hackathon-assets/icon-check-empty-circle.svg" alt="mark icon" class="white-svg">
+                </div>
+            </div>
+            <div class="alert-body">
+                <p>Alerts about your store and accountwill show</p>
             </div>
         </div>
+
+        <div class="trial" id="trialDiv">
+            <div class="trial-head">
+                <h4>Extend your trial for $1/month for 3 months on select plans.</h4>
+                <a href="shopify.com/pricing">Select a plan</a>
+            </div>
+            <div class="trial-btn">
+                <img
+                    src="https://crushingit.tech/hackathon-assets/icon-cross.svg"
+                    alt="exit icon"
+                    onclick="hideTrialMenu()"
+                    class="black-svg"
+                >
+            </div>
+        </div>
+
         <div class="setup">
             <div class="setup-head">
                 <div class="setup-head-top">
                     <h3>Setup Guide</h3>
-                    <img src="" alt="dropdown icon">
+                    <div
+                        role="button"
+                        tabindex="0"
+                        onclick="hideSetupMenu()"
+                        aria-expanded="false"
+                    >
+                        <img
+                            src="https://crushingit.tech/hackathon-assets/icon-arrow-down.svg"
+                            alt="dropdown icon"
+                            id="dropdownIcon"
+                            onclick="SetupMenuState()"
+                        >
+                    </div>
                 </div>
-                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, eligendi molestias?</h4>
-                <div class="setup-head-progress">
+                <h4>Use this personalized guide to get your store up and running.</h4>
+                <!-- <div class="setup-head-progress">
                     1/5 completed
-                </div>
+                    <div
+                        class="progress-bar"
+                        id="progressBar"
+                    >
+                        <div id="progress" style="width: 0;">  </div>
+                    </div>
+                </div> -->
             </div>
-            <div class="set-up-body">
-
+            <div class="setup-body" id="setupBody">
+                <h3>the body</h3>
             </div>
         </div>
+
     </main>
 
 
 
-    <script src="./app.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
